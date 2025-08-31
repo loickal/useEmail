@@ -11,7 +11,7 @@ export class UnsendService implements EmailService {
 
   constructor(apiToken?: string, apiUrl?: string) {
     this.apiToken = apiToken || process.env.UNSEND_API_TOKEN || "";
-    this.apiUrl = apiUrl || process.env.UNSEND_API_URL || "https://app.unsend.dev/api/";
+    this.apiUrl = apiUrl || process.env.UNSEND_API_URL || "https://app.unsend.dev/api/v1/emails";
   }
 
   async send(emailOptions: EmailOptions): Promise<void> {
