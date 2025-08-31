@@ -25,6 +25,7 @@ Supports modern email providers
 4. Plunk
 5. Mailgun
 6. Zeptomail (Zoho)
+7. Unsend (Cloud & Self-Hosted)
 
 Installation
 You can install the package using your preferred package manager:
@@ -52,6 +53,10 @@ SENDGRID_API_KEY=<TOKEN>
 
 #ZEPTOMAIL
 ZEPTOMAIL_API_KEY=<TOKEN>
+
+#UNSEND
+UNSEND_API_TOKEN=<TOKEN>
+UNSEND_API_URL=<https://app.unsend.dev/api/v1/emails> (OPTIONAL; use it for your self hosted unsend instance)
 ```
 
 ## Usage
@@ -78,6 +83,7 @@ const postmarkService = useEmail("postmark");
 const plunkService = useEmail("plunk");
 const mailgunService = useEmail("mailgun");
 const zeptomailService = useEmail("zeptomail");
+const unsendService = useEmail("unsend");
 ```
 
 ## Email Options
@@ -172,7 +178,7 @@ Creates an email service instance for the specified provider.
 
 **Parameters:**
 
-- `provider`: One of `"resend"` | `"sendgrid"` | `"postmark"` | `"plunk"` | `"mailgun"` | `"zeptomail"`
+- `provider`: One of `"resend"` | `"sendgrid"` | `"postmark"` | `"plunk"` | `"mailgun"` | `"zeptomail"` | `"unsend"`
 
 **Returns:**
 
