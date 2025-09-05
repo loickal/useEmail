@@ -3,7 +3,7 @@ import { PostmarkService } from "./services/postmark";
 import { ResendService } from "./services/resend";
 import { SendGridService } from "./services/sendgrid";
 import { ZeptoMailService } from "./services/zeptomail";
-import { UnsendService } from "./services/unsend";
+import { UsesendService } from "./services/usesend";
 import type { EmailProvider } from "./types/email-options";
 import type { EmailService } from "./types/email-service";
 
@@ -30,8 +30,8 @@ export function useEmail(provider: EmailProvider): EmailService {
     case "zeptomail": {
       return new ZeptoMailService();
     }
-    case "unsend": {
-      return new UnsendService();
+    case "usesend": {
+      return new UsesendService();
     }
     default: {
       throw new Error(`Unsupported email provider: ${provider}`);

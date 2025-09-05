@@ -26,7 +26,7 @@ A unified TypeScript library for sending emails across multiple providers with a
 4. [Plunk](https://useplunk.com/)
 5. [Mailgun](https://www.mailgun.com/)
 6. [Zeptomail (Zoho)](https://www.zoho.com/zeptomail/)
-7. [Unsend](https://unsend.dev/) (Cloud & Self-Hosted)
+7. [Usesend](https://usesend.com/) (Cloud & Self-Hosted)
 
 ## 📦 Installation
 
@@ -78,9 +78,9 @@ SENDGRID_API_KEY=<TOKEN>
 # ZeptoMail
 ZEPTOMAIL_API_KEY=<TOKEN>
 
-# Unsend
-UNSEND_API_TOKEN=<TOKEN>
-UNSEND_API_URL=<https://app.unsend.dev/api/v1/emails> # Optional: use for self-hosted instances
+# Usesend
+USESEND_API_TOKEN=<TOKEN>
+USESEND_API_URL=<https://app.usesend.com/api/v1/emails> # Optional: use for self-hosted instances
 ```
 
 ## 🚀 Usage
@@ -111,7 +111,7 @@ const postmarkService = useEmail("postmark");
 const plunkService = useEmail("plunk");
 const mailgunService = useEmail("mailgun");
 const zeptomailService = useEmail("zeptomail");
-const unsendService = useEmail("unsend");
+const usesendService = useEmail("usesend");
 ```
 
 ### Email Options
@@ -178,7 +178,7 @@ Creates an email service instance for the specified provider.
 
 **Parameters:**
 
-- `provider`: One of `"resend"` | `"sendgrid"` | `"postmark"` | `"plunk"` | `"mailgun"` | `"zeptomail"` | `"unsend"`
+- `provider`: One of `"resend"` | `"sendgrid"` | `"postmark"` | `"plunk"` | `"mailgun"` | `"zeptomail"` | `"usesend"`
 
 **Returns:**
 

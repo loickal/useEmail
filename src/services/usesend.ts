@@ -3,20 +3,20 @@ import type { EmailOptions } from "../types/email-options";
 import type { EmailService } from "../types/email-service";
 
 /**
- * Email service implementation for Unsend
+ * Email service implementation for Usesend
  */
-export class UnsendService implements EmailService {
+export class UsesendService implements EmailService {
   private apiToken: string;
   private apiUrl: string;
 
   constructor(apiToken?: string, apiUrl?: string) {
-    this.apiToken = apiToken || process.env.UNSEND_API_TOKEN || "";
-    this.apiUrl = apiUrl || process.env.UNSEND_API_URL || "https://app.unsend.dev/api/v1/emails";
+    this.apiToken = apiToken || process.env.USESEND_API_TOKEN || "";
+    this.apiUrl = apiUrl || process.env.USESEND_API_URL || "https://app.usesend.com/api/v1/emails";
   }
 
   async send(emailOptions: EmailOptions): Promise<void> {
     if (!this.apiToken) {
-      throw new Error("Unsend API token is missing");
+      throw new Error("Usesend API token is missing");
     }
 
     const { to, from, subject, text, html } = emailOptions;
@@ -43,8 +43,8 @@ export class UnsendService implements EmailService {
       });
       return response;
     } catch (error) {
-      console.error("Failed to send email with Unsend:", error);
-      throw new Error("Email sending failed with Unsend");
+      console.error("Failed to send email with Usesend:", error);
+      throw new Error("Email sending failed with Usesend");
     }
   }
 }

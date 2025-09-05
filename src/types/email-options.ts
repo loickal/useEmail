@@ -19,4 +19,4 @@ export type EmailProvider =
   | "postmark"
   | "mailgun"
   | "zeptomail"
-  | "unsend";
+  | "usesend";
